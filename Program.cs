@@ -6,10 +6,10 @@
         double lon = 49.09003; //x
         int zoom = 11;
         string dir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        string networkType = "3g";
 
-        string? savedFile = Yandex.Helper.GetCoverageMap(lat, lon, zoom, "2g", dir);
+        string? savedFile = YandexHelper.GetCoverageMap(lat, lon, zoom, networkType, dir);
         double result = CoverageBitmap.GetCoveragePercentage(savedFile);
         Console.WriteLine($"Coverage is {result*100:F3}%");
     }
-
 }

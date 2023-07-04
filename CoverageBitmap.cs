@@ -14,6 +14,7 @@ public class CoverageBitmap
         int totalPixels = src.Rows * src.Cols;
         int numOfColoredPixels = src.CountNonZero();
         src.Dispose();
+        System.IO.File.Delete(fileName);
         return (double)numOfColoredPixels/(double)totalPixels;
     }
 }
